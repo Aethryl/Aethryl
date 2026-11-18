@@ -1,17 +1,155 @@
 {
   "owner": "Aethryl",
   "groups": [
-    {"title": "Code navigation", "projects": [
-      {"name": "ty-agent-lsp", "accent": "#c2a6ea", "glyph": "brackets", "text": "Semantic navigation and a safe workspace rename for Python.", "chips": ["Python", "MCP"]},
-      {"name": "lsp-guard", "accent": "#c2a6ea", "glyph": "shield", "text": "Routes code lookups to the language server instead of cat and sed.", "chips": ["Claude Code", "hook"]}
-    ]},
-    {"title": "Usage and operations", "projects": [
-      {"name": "claude-usage-guard", "accent": "#c79bff", "glyph": "gauge", "text": "A weekly usage cap that pauses tool use before the plan runs out.", "chips": ["TypeScript", "hook"]},
-      {"name": "orca-fleet-stats", "accent": "#a2a8ff", "glyph": "chart", "text": "Tool-call, latency and cost stats for Claude Code, Codex and opencode.", "chips": ["Python", "Claude Code"]},
-      {"name": "kowalski-analysis", "accent": "#a2a8ff", "glyph": "lens", "text": "A session status briefing on demand, at zero context cost.", "chips": ["Skill", "Claude Code"]}
-    ]},
-    {"title": "Documents", "projects": [
-      {"name": "pressroom", "accent": "#a996ff", "glyph": "page", "text": "Print-ready HTML and clean PDFs, checked page by page.", "chips": ["Python", "Chromium"]}
-    ]}
+    {
+      "title": "Code navigation",
+      "projects": [
+        {
+          "name": "ty-agent-lsp",
+          "accent": "#c2a6ea",
+          "glyph": "brackets",
+          "text": "Semantic navigation and a safe workspace rename for Python.",
+          "chips": [
+            "Python",
+            "MCP"
+          ]
+        },
+        {
+          "name": "lsp-guard",
+          "accent": "#c2a6ea",
+          "glyph": "shield",
+          "text": "Routes code lookups to the language server instead of cat and sed.",
+          "chips": [
+            "Claude Code",
+            "hook"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Usage and operations",
+      "projects": [
+        {
+          "name": "claude-usage-guard",
+          "accent": "#c79bff",
+          "glyph": "gauge",
+          "text": "A weekly usage cap that pauses tool use before the plan runs out.",
+          "chips": [
+            "TypeScript",
+            "hook"
+          ]
+        },
+        {
+          "name": "orca-fleet-stats",
+          "accent": "#a2a8ff",
+          "glyph": "chart",
+          "text": "Tool-call, latency and cost stats for Claude Code, Codex and opencode.",
+          "chips": [
+            "Python",
+            "Claude Code"
+          ]
+        },
+        {
+          "name": "kowalski-analysis",
+          "accent": "#a2a8ff",
+          "glyph": "lens",
+          "text": "A session status briefing on demand, at zero context cost.",
+          "chips": [
+            "Skill",
+            "Claude Code"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Documents",
+      "projects": [
+        {
+          "name": "pressroom",
+          "accent": "#a996ff",
+          "glyph": "page",
+          "text": "Print-ready HTML and clean PDFs, checked page by page.",
+          "chips": [
+            "Python",
+            "Chromium"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Linux desktop",
+      "projects": [
+        {
+          "name": "plasma-setup",
+          "accent": "#a7c080",
+          "glyph": "desktop",
+          "text": "KDE Plasma 6 desktop layer: floating bar and windows, Everforest light and dark.",
+          "chips": [
+            "Plasma 6",
+            "Everforest"
+          ]
+        },
+        {
+          "name": "plasma-statusbar",
+          "accent": "#a7c080",
+          "glyph": "panel",
+          "text": "Plasma 6 panel widget: network, Bluetooth, volume, battery, updates and clock.",
+          "chips": [
+            "Plasma 6",
+            "QML"
+          ]
+        },
+        {
+          "name": "plasma-sysbar",
+          "accent": "#a7c080",
+          "glyph": "chart",
+          "text": "Plasma 6 panel widget: CPU, RAM, GPU and network meters with history graphs.",
+          "chips": [
+            "Plasma 6",
+            "QML"
+          ]
+        },
+        {
+          "name": "plasma-soundbar",
+          "accent": "#a7c080",
+          "glyph": "wave",
+          "text": "Plasma 6 panel widget showing now playing from any MPRIS player.",
+          "chips": [
+            "Plasma 6",
+            "MPRIS"
+          ]
+        },
+        {
+          "name": "plasma-claudebar",
+          "accent": "#a7c080",
+          "glyph": "gauge",
+          "text": "Plasma 6 panel widget: Claude Code agent counts, rate limits and a cost estimate.",
+          "chips": [
+            "Plasma 6",
+            "QML"
+          ]
+        },
+        {
+          "name": "plasma-mural",
+          "accent": "#a7c080",
+          "glyph": "image",
+          "text": "Wallpaper rotation for Plasma 6: a panel widget and the mural CLI.",
+          "chips": [
+            "Plasma 6",
+            "CLI"
+          ]
+        },
+        {
+          "name": "plasmoid-design",
+          "accent": "#a7c080",
+          "glyph": "brackets",
+          "text": "A skill for building and reviewing Plasma 6 widgets and Kirigami apps.",
+          "chips": [
+            "Skill",
+            "QML"
+          ]
+        }
+      ]
+    }
   ]
 }

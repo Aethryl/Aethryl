@@ -20,6 +20,10 @@ GLYPHS = {
     "brackets": '<path d="M24 20 L14 32 L24 44 M40 20 L50 32 L40 44" {s}/><circle cx="32" cy="32" r="3.8" fill="{a}"/>',
     "lens": '<path d="M38 38 L50 50" {s}/><path d="M28 14 A14 14 0 1 0 28.01 14" {s}/><circle cx="28" cy="28" r="3.8" fill="{a}"/>',
     "shield": '<path d="M32 52 C21 46 16 38 16 22 L32 14 L48 22 C48 38 43 46 32 52" {s}/><circle cx="32" cy="32" r="3.8" fill="{a}"/>',
+    "panel": '<rect x="10" y="16" width="44" height="32" rx="4" {s}/><path d="M10 40 H54" {s}/><circle cx="20" cy="33" r="3.8" fill="{a}"/>',
+    "wave": '<path d="M10 32 H16 M24 20 V44 M32 12 V52 M40 22 V42 M48 32 H54" {s}/><circle cx="32" cy="32" r="3.8" fill="{a}"/>',
+    "image": '<rect x="12" y="14" width="40" height="36" rx="4" {s}/><path d="M12 42 L26 30 L38 40 L46 34 L52 40" {s}/><circle cx="42" cy="24" r="3.8" fill="{a}"/>',
+    "desktop": '<rect x="10" y="14" width="44" height="30" rx="4" {s}/><path d="M24 52 H40 M32 44 V52" {s}/><circle cx="32" cy="29" r="3.8" fill="{a}"/>',
     "chart": '<path d="M12 46 L24 34 L34 40 L50 20" {s}/><circle cx="50" cy="20" r="4.2" fill="{a}"/>',
 }
 
@@ -55,7 +59,7 @@ def card(p, theme):
         f'<svg xmlns="http://www.w3.org/2000/svg" width="320" height="150" viewBox="0 0 320 150" role="img" '
         f'aria-label="{esc(p["name"])}: {esc(p["text"])}">'
         f'<rect x=".5" y=".5" width="319" height="149" rx="12" fill="{c["bg"]}" stroke="{c["edge"]}"/>'
-        f'<path d="M12 .5 H308 A12 12 0 0 1 320 12.5 V13 H0 V12.5 A12 12 0 0 1 12 .5Z" fill="{a}"/>'
+        f'<path d="M2 16 V134" fill="none" stroke="{a}" stroke-width="3" stroke-linecap="round"/>'
         f'<svg x="16" y="26" width="34" height="34" viewBox="0 0 64 64">{glyph}</svg>'
         f'<text x="58" y="50" font-family="{SANS}" font-weight="800" font-size="19" letter-spacing="-.5" fill="{c["ink"]}">'
         f'{esc(p["name"])}<tspan fill="{a}">.</tspan></text>{body}{chips}</svg>\n'
