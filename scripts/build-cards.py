@@ -68,7 +68,6 @@ def card(p, theme):
         f'<svg xmlns="http://www.w3.org/2000/svg" width="320" height="150" viewBox="0 0 320 150" role="img" '
         f'aria-label="{esc(p["name"])}: {esc(p["text"])}">'
         f'<rect x=".5" y=".5" width="319" height="149" rx="12" fill="{c["bg"]}" stroke="{c["edge"]}"/>'
-        f'<path d="M2 16 V134" fill="none" stroke="{a}" stroke-width="3" stroke-linecap="round"/>'
         f'{icon}'
         f'<text x="58" y="50" font-family="{SANS}" font-weight="800" font-size="19" letter-spacing="-.5" fill="{c["ink"]}">'
         f'{esc(p["name"])}<tspan fill="{a}">.</tspan></text>{body}{chips}</svg>\n'
