@@ -1,5 +1,3 @@
-# Aethryl
-
 Software Engineer. Backend systems, and developer tooling for Claude Code and real codebases.
 
 ## Projects
