@@ -32,5 +32,3 @@ Software engineer. I build backend systems and developer tooling, and I enjoy cu
 <a href="https://github.com/Aethryl/plasmoid-design"><picture><source media="(prefers-color-scheme: dark)" srcset="cards/plasmoid-design-dark.svg"><img src="cards/plasmoid-design-light.svg" width="320" alt="plasmoid-design: A skill for building and reviewing Plasma 6 widgets and Kirigami apps."></picture></a>
 </p>
 <!-- projects:end -->
-
-Install any of them from Claude Code: `/plugin marketplace add Aethryl/<repo>`. Exact lines are in each README.
