@@ -67,7 +67,7 @@ def main():
     (ROOT / "cards").mkdir(exist_ok=True)
     md = []
     for g in data["groups"]:
-        md.append(f"<sub><b>{g['title'].upper()}</b></sub>\n<p>")
+        md.append(f"<sub><b>{g['title']}</b></sub>\n<p>")
         for p in g["projects"]:
             for theme in THEMES:
                 (ROOT / "cards" / f"{p['name']}-{theme}.svg").write_text(card(p, theme))

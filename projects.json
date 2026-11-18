@@ -1,16 +1,16 @@
 {
   "owner": "Aethryl",
   "groups": [
-    {"title": "Agents that read code properly", "projects": [
+    {"title": "Code navigation", "projects": [
       {"name": "ty-agent-lsp", "accent": "#c2a6ea", "glyph": "brackets", "text": "Semantic navigation and a safe workspace rename for Python.", "chips": ["Python", "MCP"]},
-      {"name": "lsp-guard", "accent": "#c2a6ea", "glyph": "shield", "text": "Sends the agent to the language server, not cat and sed.", "chips": ["Claude Code", "hook"]}
+      {"name": "lsp-guard", "accent": "#c2a6ea", "glyph": "shield", "text": "Routes code lookups to the language server instead of cat and sed.", "chips": ["Claude Code", "hook"]}
     ]},
-    {"title": "Agents that stay on budget and in view", "projects": [
+    {"title": "Usage and operations", "projects": [
       {"name": "claude-usage-guard", "accent": "#c79bff", "glyph": "gauge", "text": "A weekly usage cap that pauses tool use before the plan runs out.", "chips": ["TypeScript", "hook"]},
       {"name": "orca-fleet-stats", "accent": "#a2a8ff", "glyph": "chart", "text": "Tool-call, latency and cost stats for Claude Code, Codex and opencode.", "chips": ["Python", "Claude Code"]},
       {"name": "kowalski-analysis", "accent": "#a2a8ff", "glyph": "lens", "text": "A session status briefing on demand, at zero context cost.", "chips": ["Skill", "Claude Code"]}
     ]},
-    {"title": "Agents that produce documents", "projects": [
+    {"title": "Documents", "projects": [
       {"name": "pressroom", "accent": "#a996ff", "glyph": "page", "text": "Print-ready HTML and clean PDFs, checked page by page.", "chips": ["Python", "Chromium"]}
     ]}
   ]
