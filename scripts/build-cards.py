@@ -5,7 +5,7 @@ Usage: python3 scripts/build-cards.py   (stdlib only; run from anywhere)
 Static SVGs: system fonts only, no scripts, no foreignObject.
 README: the block between <!-- projects:start --> and <!-- projects:end --> is rewritten.
 """
-import colorsys, json, pathlib, textwrap
+import colorsys, json, pathlib, re, textwrap
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 THEMES = {
@@ -44,7 +44,16 @@ def esc(t):
 def card(p, theme):
     c, a = THEMES[theme], accent_for(p["accent"], theme)
     stroke = f'fill="none" stroke="{c["ink"]}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"'
-    glyph = GLYPHS[p["glyph"]].format(s=stroke, a=a)
+    if p.get("icon"):
+        raw = (ROOT / p["icon"]).read_text()
+        vb = re.search(r'viewBox="([^"]+)"', raw).group(1)
+        inner = raw[raw.index(">", raw.index("<svg")) + 1:raw.rindex("</svg>")]
+        w, h = (float(v) for v in vb.split()[2:])
+        iw, ih = (34, 34 * h / w) if w >= h else (34 * w / h, 34)
+        icon = (f'<svg x="{16 + (34 - iw) / 2:.2f}" y="{26 + (34 - ih) / 2:.2f}" width="{iw:.2f}" height="{ih:.2f}" '
+                f'viewBox="{vb}" shape-rendering="crispEdges">{inner}</svg>')
+    else:
+        icon = f'<svg x="16" y="26" width="34" height="34" viewBox="0 0 64 64">{GLYPHS[p["glyph"]].format(s=stroke, a=a)}</svg>'
     lines = textwrap.wrap(p["text"], 44)[:2]
     body = "".join(
         f'<text x="16" y="{78 + i * 18}" font-family="{SANS}" font-size="13" fill="{c["muted"]}">{esc(t)}</text>'
@@ -60,7 +69,7 @@ def card(p, theme):
         f'aria-label="{esc(p["name"])}: {esc(p["text"])}">'
         f'<rect x=".5" y=".5" width="319" height="149" rx="12" fill="{c["bg"]}" stroke="{c["edge"]}"/>'
         f'<path d="M2 16 V134" fill="none" stroke="{a}" stroke-width="3" stroke-linecap="round"/>'
-        f'<svg x="16" y="26" width="34" height="34" viewBox="0 0 64 64">{glyph}</svg>'
+        f'{icon}'
         f'<text x="58" y="50" font-family="{SANS}" font-weight="800" font-size="19" letter-spacing="-.5" fill="{c["ink"]}">'
         f'{esc(p["name"])}<tspan fill="{a}">.</tspan></text>{body}{chips}</svg>\n'
     )

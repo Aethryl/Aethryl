@@ -123,6 +123,7 @@
           "name": "plasma-claudebar",
           "accent": "#a7c080",
           "glyph": "gauge",
+          "icon": "assets/clawd.svg",
           "text": "Plasma 6 panel widget: Claude Code agent counts, rate limits and a cost estimate.",
           "chips": [
             "Plasma 6",
