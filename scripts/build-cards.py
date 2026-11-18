@@ -48,10 +48,12 @@ def card(p, theme):
         raw = (ROOT / p["icon"]).read_text()
         vb = re.search(r'viewBox="([^"]+)"', raw).group(1)
         inner = raw[raw.index(">", raw.index("<svg")) + 1:raw.rindex("</svg>")]
+        themed = "currentColor" in raw
+        inner = inner.replace("currentColor", c["ink"]).replace(p["accent"], a)
         w, h = (float(v) for v in vb.split()[2:])
         iw, ih = (34, 34 * h / w) if w >= h else (34 * w / h, 34)
         icon = (f'<svg x="{16 + (34 - iw) / 2:.2f}" y="{26 + (34 - ih) / 2:.2f}" width="{iw:.2f}" height="{ih:.2f}" '
-                f'viewBox="{vb}" shape-rendering="crispEdges">{inner}</svg>')
+                f'viewBox="{vb}"{"" if themed else ' shape-rendering="crispEdges"'}>{inner}</svg>')
     else:
         icon = f'<svg x="16" y="26" width="34" height="34" viewBox="0 0 64 64">{GLYPHS[p["glyph"]].format(s=stroke, a=a)}</svg>'
     lines = textwrap.wrap(p["text"], 44)[:2]
