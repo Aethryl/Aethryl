@@ -38,7 +38,8 @@
           "chips": [
             "TypeScript",
             "hook"
-          ]
+          ],
+          "icon": "assets/claude-usage-guard.svg"
         },
         {
           "name": "orca-fleet-stats",
@@ -48,7 +49,10 @@
           "chips": [
             "Python",
             "Claude Code"
-          ]
+          ],
+          "icon": "assets/orca-fleet-stats.svg",
+          "icon_keep_colors": true,
+          "icon_light": "assets/orca-fleet-stats-light.svg"
         },
         {
           "name": "kowalski-analysis",
@@ -58,7 +62,8 @@
           "chips": [
             "Skill",
             "Claude Code"
-          ]
+          ],
+          "icon": "assets/kowalski-analysis.svg"
         }
       ]
     },

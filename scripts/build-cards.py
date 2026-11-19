@@ -45,15 +45,17 @@ def card(p, theme):
     c, a = THEMES[theme], accent_for(p["accent"], theme)
     stroke = f'fill="none" stroke="{c["ink"]}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"'
     if p.get("icon"):
-        raw = (ROOT / p["icon"]).read_text()
+        keep = p.get("icon_keep_colors")
+        raw = (ROOT / (p["icon_light"] if keep and theme == "light" and p.get("icon_light") else p["icon"])).read_text()
         vb = re.search(r'viewBox="([^"]+)"', raw).group(1)
         inner = raw[raw.index(">", raw.index("<svg")) + 1:raw.rindex("</svg>")]
         themed = "currentColor" in raw
-        inner = inner.replace("currentColor", c["ink"]).replace(p["accent"], a)
+        if not keep:
+            inner = inner.replace("currentColor", c["ink"]).replace("currentBg", c["bg"]).replace(p["accent"], a)
         w, h = (float(v) for v in vb.split()[2:])
         iw, ih = (34, 34 * h / w) if w >= h else (34 * w / h, 34)
         icon = (f'<svg x="{16 + (34 - iw) / 2:.2f}" y="{26 + (34 - ih) / 2:.2f}" width="{iw:.2f}" height="{ih:.2f}" '
-                f'viewBox="{vb}"{"" if themed else ' shape-rendering="crispEdges"'}>{inner}</svg>')
+                f'viewBox="{vb}"{"" if themed or keep else ' shape-rendering="crispEdges"'}>{inner}</svg>')
     else:
         icon = f'<svg x="16" y="26" width="34" height="34" viewBox="0 0 64 64">{GLYPHS[p["glyph"]].format(s=stroke, a=a)}</svg>'
     lines = textwrap.wrap(p["text"], 44)[:2]
